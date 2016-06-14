@@ -22,8 +22,13 @@ EOF
 
 
 #copiamos certificados
+#como accedemos como root ponemos las credenciales en /root/.ssh/
+mkdir -p /root/.ssh/
+
+#damos permisos a la carpeta
+
 chmod 600  ~/.ssh/authorized_keys
-cat /vagrant/provision/id_rsa.pub >> ~/.ssh/authorized_keys
+cat /vagrant/provision/id_rsa.pub >> /root/.ssh/authorized_keys
 
 
 #Escuchar en puerto 4000
